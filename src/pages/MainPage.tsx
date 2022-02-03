@@ -7,15 +7,14 @@ import PostForm from "./form/PostForm";
 import { Loading } from "react-loading-dot";
 import { MobileStepperClassKey } from "@mui/material";
 import useGetActiveServiceEndpoint from "../hooks/useGetActiveServiceEndpoint";
+import { useAlert } from "react-alert";
 
 const MainPage = () => {
-
-
+  const alert = useAlert();
   const theme = useTheme();
   const matchDownSM = useMediaQuery(theme.breakpoints.down("md"));
 
-  const { isLoading, message, isLoadingPost, error, postForm } =
-    useGetActiveServiceEndpoint();
+  const { isLoading, isLoadingPost, postForm } = useGetActiveServiceEndpoint();
 
   return (
     <MainWrapper>

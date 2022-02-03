@@ -26,6 +26,7 @@
     "mobile-detect": "^1.4.5",
     "node-sass": "^7.0.1",
     "react": "^17.0.2",
+    "react-alert": "^7.0.3",
     "react-dom": "^17.0.2",
     "react-loading-dot": "^1.0.6",
     "react-router-dom": "^6.2.1",
@@ -57,5 +58,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-alert": "^5.2.1"
   }
 }

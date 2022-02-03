@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getActiveService, postToEndpoint } from "../services/endpointService";
 import { getActiveIssue } from "../services/issueService";
 import MobileDetect from "mobile-detect";
+import { useAlert } from "react-alert";
 
 var md = new MobileDetect(window.navigator.userAgent);
 
@@ -11,8 +12,7 @@ export default function useGetActiveServiceEndpoint() {
   const [isLoadingPost, setLoadingPost] = useState(false);
   const [endPoint, setEndPoint] = useState(null);
   const [issue, setIssue]: any = useState(null);
-  const [message, setMessage] = useState(null);
-  const [error, setError] = useState(null);
+  const alert = useAlert();
 
   useEffect(() => {
     !deviceType && setDeviceType("Generic Device");
@@ -25,6 +25,7 @@ export default function useGetActiveServiceEndpoint() {
         setLoading(false);
       })
       .catch((e: any) => {
+        alert.show(e.message, {type:'error'})
         setLoading(false);
       });
     issue
@@ -33,6 +34,7 @@ export default function useGetActiveServiceEndpoint() {
         setLoading(false);
       })
       .catch((e: any) => {
+        alert.show(e.message, {type:'error'})
         setLoading(false);
       });
   }, []);
@@ -47,14 +49,15 @@ export default function useGetActiveServiceEndpoint() {
       setLoadingPost(true);
       result
         .then((res: any) => {
-          setMessage(res.data.message);
+          alert.show(res.data.message, {type:'error'})
           setLoadingPost(false);
         })
         .catch((e: any) => {
           setLoadingPost(false);
+          alert.show(e.message, {type:'error'})
         });
     }
   }
 
-  return { isLoading, isLoadingPost, message, error, postForm };
+  return { isLoading, isLoadingPost, postForm };
 }
