@@ -9,6 +9,7 @@ var md = new MobileDetect(window.navigator.userAgent);
 export default function useGetActiveServiceEndpoint() {
   const [deviceType, setDeviceType] = useState(md.mobile());
   const [isLoading, setLoading] = useState(true);
+  const [open, setOpen] = useState(false);
   const [isLoadingPost, setLoadingPost] = useState(false);
   const [endPoint, setEndPoint] = useState(null);
   const [issue, setIssue]: any = useState(null);
@@ -49,8 +50,8 @@ export default function useGetActiveServiceEndpoint() {
       setLoadingPost(true);
       result
         .then((res: any) => {
-          alert.show(res.data.message, {type:'success'})
           setLoadingPost(false);
+          setOpen(true)
         })
         .catch((e: any) => {
           setLoadingPost(false);
@@ -59,5 +60,5 @@ export default function useGetActiveServiceEndpoint() {
     }
   }
 
-  return { isLoading, isLoadingPost, postForm };
+  return { isLoading, isLoadingPost, postForm, open, setOpen };
 }

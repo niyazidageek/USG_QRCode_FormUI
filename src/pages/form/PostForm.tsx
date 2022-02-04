@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Snackbar } from "@mui/material";
-import MuiAlert from '@mui/material/Alert';
-// material-ui
+import MuiAlert from "@mui/material/Alert";
 import { useTheme } from "@mui/material/styles";
 import {
   Box,
@@ -23,18 +22,16 @@ import {
 
 import { useFormik } from "formik";
 import { formSchema } from "../../validations/formSchema";
+import { SuccessModal } from "../SuccessModal";
 
-
-
-const PostForm = ({isLoading, postFunc}:any) => {
+const PostForm = ({ isLoading, postFunc }: any) => {
   const theme: any = useTheme();
-
   const formik = useFormik({
     initialValues: {
       email: "",
     },
-    validationSchema:formSchema,
-    onSubmit: (data)=>postFunc(data)
+    validationSchema: formSchema,
+    onSubmit: (data) => postFunc(data),
   });
 
   return (
@@ -62,21 +59,19 @@ const PostForm = ({isLoading, postFunc}:any) => {
             </FormHelperText>
           )}
         </FormControl>
-      
 
         <Box sx={{ mt: 2 }}>
-
-            <Button
-              disableElevation
-              disabled={isLoading}
-              fullWidth
-              size="large"
-              type="submit"
-              variant="contained"
-              color="secondary"
-            >
-              submit
-            </Button>
+          <Button
+            disableElevation
+            disabled={isLoading}
+            fullWidth
+            size="large"
+            type="submit"
+            variant="contained"
+            color="secondary"
+          >
+            submit
+          </Button>
         </Box>
       </form>
     </>

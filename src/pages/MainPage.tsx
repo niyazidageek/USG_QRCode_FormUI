@@ -8,12 +8,13 @@ import { Loading } from "react-loading-dot";
 import { MobileStepperClassKey } from "@mui/material";
 import useGetActiveServiceEndpoint from "../hooks/useGetActiveServiceEndpoint";
 import { useAlert } from "react-alert";
+import { SuccessModal } from "./SuccessModal";
 
 const MainPage = () => {
   const theme = useTheme();
   const matchDownSM = useMediaQuery(theme.breakpoints.down("md"));
 
-  const { isLoading, isLoadingPost, postForm } = useGetActiveServiceEndpoint();
+  const { isLoading, isLoadingPost, postForm, open, setOpen } = useGetActiveServiceEndpoint();
 
   return (
     <MainWrapper>
@@ -82,6 +83,7 @@ const MainPage = () => {
           </Grid>
         </Grid>
       </Grid>
+      <SuccessModal open={open} setOpen={setOpen} />
     </MainWrapper>
   );
 };
