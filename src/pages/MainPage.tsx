@@ -10,7 +10,6 @@ import useGetActiveServiceEndpoint from "../hooks/useGetActiveServiceEndpoint";
 import { useAlert } from "react-alert";
 
 const MainPage = () => {
-  const alert = useAlert();
   const theme = useTheme();
   const matchDownSM = useMediaQuery(theme.breakpoints.down("md"));
 

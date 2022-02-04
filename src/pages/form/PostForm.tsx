@@ -34,7 +34,7 @@ const PostForm = ({isLoading, postFunc}:any) => {
       email: "",
     },
     validationSchema:formSchema,
-    onSubmit: postFunc
+    onSubmit: (data)=>postFunc(data)
   });
 
   return (

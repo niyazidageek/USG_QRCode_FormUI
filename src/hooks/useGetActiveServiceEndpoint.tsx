@@ -25,7 +25,7 @@ export default function useGetActiveServiceEndpoint() {
         setLoading(false);
       })
       .catch((e: any) => {
-        alert.show(e.message, {type:'error'})
+        alert.show(e.response.data.message, {type:'error'})
         setLoading(false);
       });
     issue
@@ -34,12 +34,12 @@ export default function useGetActiveServiceEndpoint() {
         setLoading(false);
       })
       .catch((e: any) => {
-        alert.show(e.message, {type:'error'})
+        alert.show(e.response.data.message, {type:'error'})
         setLoading(false);
       });
   }, []);
 
-  function postForm(data: any) {
+  const postForm = (data: any) => {
     if (endPoint && issue) {
       const result = postToEndpoint(endPoint, {
         email: data.email,
@@ -49,12 +49,12 @@ export default function useGetActiveServiceEndpoint() {
       setLoadingPost(true);
       result
         .then((res: any) => {
-          alert.show(res.data.message, {type:'error'})
+          alert.show(res.data.message, {type:'success'})
           setLoadingPost(false);
         })
         .catch((e: any) => {
           setLoadingPost(false);
-          alert.show(e.message, {type:'error'})
+          alert.show(e.response.data.message, {type:'error'})
         });
     }
   }
