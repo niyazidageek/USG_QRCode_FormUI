@@ -26,7 +26,7 @@ export default function useGetActiveServiceEndpoint() {
         setLoading(false);
       })
       .catch((e: any) => {
-        alert.show(e.response.data.message, {type:'error'})
+        alert.show(e.response?.data?.message??e.message, {type:'error'})
         setLoading(false);
       });
     issue
@@ -35,7 +35,7 @@ export default function useGetActiveServiceEndpoint() {
         setLoading(false);
       })
       .catch((e: any) => {
-        alert.show(e.response.data.message, {type:'error'})
+        alert.show(e.response?.data?.message??e.message, {type:'error'})
         setLoading(false);
       });
   }, []);
@@ -55,7 +55,7 @@ export default function useGetActiveServiceEndpoint() {
         })
         .catch((e: any) => {
           setLoadingPost(false);
-          alert.show(e.response.data.message, {type:'error'})
+          alert.show(e.response?.data?.message??e.message, {type:'error'})
         });
     }
   }
