@@ -53,9 +53,6 @@ export function SuccessModal({ open, setOpen }: any) {
             >
               <CloseIcon />
             </IconButton>
-            <Typography fontWeight={"bold"} color={"white"} fontSize={"1rem"}>
-              Result
-            </Typography>
           </Toolbar>
         </AppBar>
         <Box
@@ -72,7 +69,7 @@ export function SuccessModal({ open, setOpen }: any) {
             style={{lineBreak:'anywhere'}}
             fontSize={"3rem"}
           >
-            Success ✅
+            Sorğunuz uğurla tamamlandi ✅
           </Typography>
 
           <Confetti gravity={0.2} numberOfPieces={400} />

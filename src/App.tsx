@@ -22,10 +22,10 @@ function App() {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme(customization)}>
-        <Provider template={AlertTemplate} {...options}>
+        {/* <Provider template={AlertTemplate} {...options}> */}
           <CssBaseline />
           <Routes />
-        </Provider>
+        {/* </Provider> */}
       </ThemeProvider>
     </StyledEngineProvider>
   );

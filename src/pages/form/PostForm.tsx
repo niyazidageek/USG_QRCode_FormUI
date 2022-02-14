@@ -43,7 +43,7 @@ const PostForm = ({ isLoading, postFunc }: any) => {
           sx={{ ...theme.typography.customInput }}
         >
           <InputLabel htmlFor="outlined-adornment-email-login">
-            Email Address
+            E-poçt
           </InputLabel>
           <OutlinedInput
             type="email"
@@ -62,6 +62,7 @@ const PostForm = ({ isLoading, postFunc }: any) => {
 
         <Box sx={{ mt: 2 }}>
           <Button
+            style={{fontWeight:'bold'}}
             disableElevation
             disabled={isLoading}
             fullWidth
@@ -70,7 +71,7 @@ const PostForm = ({ isLoading, postFunc }: any) => {
             variant="contained"
             color="secondary"
           >
-            submit
+            tamamla
           </Button>
         </Box>
       </form>

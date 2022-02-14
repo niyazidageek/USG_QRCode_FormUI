@@ -2,8 +2,8 @@ import * as Yup from 'yup';
 
 export const formSchema = Yup.object().shape({
     email: Yup.string()
-    .email("Invalid email address!")
-    .max(500, "Email is too long - should not exceed 500 chars.")
-    .required("Required!"),
+    .email("E-poçt düzgün deyil!")
+    .max(500, "E-poçt uzundu - 500 simvoldan çox olmamalidir!")
+    .required("Melumati daxil edin!"),
   });
   
