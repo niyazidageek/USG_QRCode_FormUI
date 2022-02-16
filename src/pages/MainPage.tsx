@@ -89,7 +89,7 @@ const MainPage = () => {
   // const matchDownSM = useMediaQuery(theme.breakpoints.down("md"));
 
   useEffect(()=>{
-    window.location.replace('https://www.surveymonkey.com/r/Preview/?sm=7RQ6iLA2EK_2Bxzf_2BZmdvfW4faIYmiUIJUiYOka7xxmcvF6YizjauYPWjOWNGhfdro')
+    window.location.replace('https://s.surveyplanet.com/enylo4jp')
   },[])
 
   return (
